@@ -11,3 +11,14 @@ inoremap [ []<left>
 inoremap { {}<left>
 set tabstop=4
 set autoindent
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+map H gT
+map L gt
+map <silent> <leader>n :tabnew<Cr>
+map <silent> <leader>c <C-w>c
+map <silent> <leader>q ZQ
