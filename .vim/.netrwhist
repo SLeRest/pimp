@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/sle-rest/finished_project/ft_printf'
+let g:netrw_dirhist_2='/Users/sle-rest/newws_ls'
+let g:netrw_dirhist_3='/Users/sle-rest/ft_ls'
+let g:netrw_dirhist_4='/Users/sle-rest/tmp_sort'
+let g:netrw_dirhist_5='/Users/sle-rest/ft_ls'
