@@ -3,6 +3,7 @@ set number
 set nocompatible
 set laststatus=2
 call plug#begin()
+	Plug 'morhetz/gruvbox'
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -22,8 +23,12 @@ set shiftwidth=4    " number of spaces to use for autoindent
 set autoindent
 set autoread
 set wildmenu
-colorscheme woju
+colorscheme gruvbox
 
+let g:gruvbox_italic=1
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_contrast_dark="medium"
+set background=dark
 let mapleader=","
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <C-T> :tabnew<CR>
