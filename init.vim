@@ -27,7 +27,7 @@ colorscheme gruvbox
 
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_comments=1
-let g:gruvbox_contrast_dark="medium"
+let g:gruvbox_contrast_dark="hard"
 set background=dark
 let mapleader=","
 map <C-n> :NERDTreeToggle<CR>
