@@ -3,8 +3,9 @@ set number
 set nocompatible
 set laststatus=2
 call plug#begin()
+	Plug 'https://gitlab.com/Lenovsky/nuake.git'
+	Plug 'arcticicestudio/nord-vim'
 	Plug 'morhetz/gruvbox'
-	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'rust-lang/rust.vim'
@@ -25,13 +26,15 @@ set autoread
 set wildmenu
 colorscheme gruvbox
 
+nnoremap <C-b> :Nuake<CR>
+inoremap <C-b> <C-\><C-n>:Nuake<CR>
+tnoremap <C-b> <C-\><C-n>:Nuake<CR>
+let g:nuake_size = 0.5
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_comments=1
 let g:gruvbox_contrast_dark="hard"
 set background=dark
 let mapleader=","
-map <C-n> :NERDTreeToggle<CR>
-nnoremap <C-T> :tabnew<CR>
 nnoremap <C-m> :FZF<CR>
 set number relativenumber
 augroup numbertoggle
