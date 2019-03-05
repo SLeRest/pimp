@@ -2,7 +2,7 @@ set t_Co=256
 set number
 set nocompatible
 set laststatus=2
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'jremmen/vim-ripgrep'
 	Plug 'prabirshrestha/async.vim'
