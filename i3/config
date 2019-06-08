@@ -383,6 +383,8 @@ set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
+# key delay
+exec --no-startup-id xset r rate 300 35
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"

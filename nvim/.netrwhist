@@ -1,7 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/ouralgan/programm/taskMaster/src'
-let g:netrw_dirhist_2='/home/ouralgan/programm/taskMaster/src/tm_mod'
-let g:netrw_dirhist_3='/home/ouralgan/programm/testing/src'
-let g:netrw_dirhist_4='/home/ouralgan/Downloads'
-let g:netrw_dirhist_5='/home/ouralgan/.config/configstore'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/ouralgan/lol_web'
+let g:netrw_dirhist_2='/home/ouralgan/lol_web/lolapi'
+let g:netrw_dirhist_3='/home/ouralgan/lol_web/lolapi/setup'

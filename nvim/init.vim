@@ -3,7 +3,8 @@ set number
 set nocompatible
 set laststatus=2
 call plug#begin()
-	Plug 'sheerun/vim-polyglot'
+	Plug 'NLKNguyen/papercolor-theme'
+	Plug 'KabbAmine/zeavim.vim'
 	Plug 'jremmen/vim-ripgrep'
 	Plug 'prabirshrestha/async.vim'
 	Plug 'prabirshrestha/vim-lsp'
@@ -21,6 +22,8 @@ call plug#end()
 let g:airline_theme='angr'
 "execute pathogen#infect()
 syntax on
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><C-tab> pumvisible() ? "\<c-n>" : "\<tab>"<Paste>
 set ruler
 set mouse=a
 set tabstop=4       " number of visual spaces per TAB
@@ -29,7 +32,6 @@ set shiftwidth=4    " number of spaces to use for autoindent
 set autoindent
 set autoread
 set wildmenu
-colorscheme gruvbox " real one
 nnoremap <C-b> :Nuake<CR>
 inoremap <C-b> <C-\><C-n>:Nuake<CR>
 tnoremap <C-b> <C-\><C-n>:Nuake<CR>
@@ -45,7 +47,10 @@ if executable('rls')
         \ 'whitelist': ['rust'],
         \ })
 endif
-set background=dark
+
+"colorscheme PaperColor " real one
+colorscheme gruvbox " real one
+let background="dark"
 let mapleader=","
 nnoremap <C-T> :tabnew<CR>
 nnoremap <C-m> :FZF<CR>
@@ -60,6 +65,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
 if &term == 'screen-256color'
     let g:tmux_navigator_no_mappings = 1
     nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
@@ -72,5 +78,8 @@ map L gt
 map <silent> <leader>w :w<CR>
 map <silent> <leader>q :q<CR>
 map <silent> <leader>x :x<CR>
-map <silent> <leader>n :tabnew<Cr>
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
 let fzf_file_options='--preview "[[ \$(file --mime {2..-1}) =~ binary ]] && echo {2..-1} is a binary file || (highlight -O ansi -l {2..-1} || coderay {2..-1} || rougify {2..-1} || cat {2..-1}) 2> /dev/null | head -'.&lines.'"'
