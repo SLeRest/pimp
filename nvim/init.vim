@@ -9,7 +9,7 @@ call plug#begin()
 	Plug 'prabirshrestha/async.vim'
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'mileszs/ack.vim'
-	Plug 'https://gitlab.com/Lenovsky/nuake.git'
+	Plug 'Lenovsky/nuake'
 	Plug 'octol/vim-cpp-enhanced-highlight'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'morhetz/gruvbox'
