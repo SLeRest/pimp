@@ -1,0 +1,8 @@
+zsh
+git
+tmux
+ripgrep
+exa
+bat
+python3
+fzf

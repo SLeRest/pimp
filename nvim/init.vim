@@ -3,7 +3,8 @@ set number
 set nocompatible
 set laststatus=2
 call plug#begin()
-	Plug 'NLKNguyen/papercolor-theme'
+	Plug 'yuki-ycino/fzf-preview.vim'
+	Plug 'ryanoasis/vim-devicons'
 	Plug 'KabbAmine/zeavim.vim'
 	Plug 'jremmen/vim-ripgrep'
 	Plug 'prabirshrestha/async.vim'
@@ -16,7 +17,6 @@ call plug#begin()
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'rust-lang/rust.vim'
-	Plug '~/.fzf'
 	Plug 'pbondoer/vim-42header'
 call plug#end()
 let g:airline_theme='angr'
@@ -53,7 +53,8 @@ colorscheme gruvbox " real one
 let background="dark"
 let mapleader=","
 nnoremap <C-T> :tabnew<CR>
-nnoremap <C-m> :FZF<CR>
+nnoremap <C-m> :FzfPreviewDirectoryFiles<CR>
+nnoremap <C-S-M> :FzfPreviewProjectGrep<CR>
 set number relativenumber
 augroup numbertoggle
   autocmd!
@@ -78,8 +79,3 @@ map L gt
 map <silent> <leader>w :w<CR>
 map <silent> <leader>q :q<CR>
 map <silent> <leader>x :x<CR>
-nnoremap <leader>k :m-2<cr>==
-nnoremap <leader>j :m+<cr>==
-xnoremap <leader>k :m-2<cr>gv=gv
-xnoremap <leader>j :m'>+<cr>gv=gv
-let fzf_file_options='--preview "[[ \$(file --mime {2..-1}) =~ binary ]] && echo {2..-1} is a binary file || (highlight -O ansi -l {2..-1} || coderay {2..-1} || rougify {2..-1} || cat {2..-1}) 2> /dev/null | head -'.&lines.'"'
