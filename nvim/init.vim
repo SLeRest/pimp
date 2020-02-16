@@ -54,7 +54,7 @@ let background="dark"
 let mapleader=","
 nnoremap <C-T> :tabnew<CR>
 nnoremap <C-m> :FzfPreviewDirectoryFiles<CR>
-nnoremap <C-S-M> :FzfPreviewProjectGrep<CR>
+nnoremap <S-M> :FzfPreviewProjectGrep<CR>
 set number relativenumber
 augroup numbertoggle
   autocmd!
