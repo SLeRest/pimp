@@ -1,8 +1,15 @@
 zsh
 git
-tmux
 ripgrep
 eza
 bat
 python3
 fzf
+golang
+fdfind
+nvim
+vim
+rofi
+polybar
+i3
+docker
