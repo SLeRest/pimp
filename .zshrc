@@ -1,8 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/nvim-linux64/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/ouralgan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,7 +16,7 @@ ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -23,17 +27,16 @@ ZSH_THEME="af-magic"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -45,6 +48,9 @@ ZSH_THEME="af-magic"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -64,17 +70,19 @@ ZSH_THEME="af-magic"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker kubectl vagrant zsh-syntax-highlighting)
+plugins=(docker git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$HOME/.local/bin:$PATH"
+export GIT_EDITOR=vim
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -89,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# gitlab=M9MYc6QpUpGxEUX
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -97,27 +106,44 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias python="python3.12"
+
 alias vim="nvim"
 
-# DOCKER
+alias l="eza -lagH"
+alias ll="eza -lgH"
+alias fd="fdfind"
+alias c="batcat"
+alias rg="rg -g='!{docs-assets,mypy_cache}'"
+
+alias optimdir="cd /home/slerest/thrasos/modules/optimize-recipe"
+alias din="$HOME/script/bash_into_container.sh"
+alias dinroot="$HOME/script/bash_root_into_container.sh"
+alias dinlsp="$HOME/script/bash_into_pylsp.sh"
+alias dlog="$HOME/script/docker_logs_color.sh"
+alias dl="$HOME/script/docker_log_color.sh"
+
+alias cr="cargo run"
+alias cb="cargo build"
+
+alias gs="git status -sb"
+alias gsh="git stash"
+alias ga="git add"
+alias gp="git push"
+alias gc="git checkout"
+alias gr="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias gl="git log --oneline"
+alias gll="git log --pretty --stat"
+alias count_commit="git rev-list --no-merges --count HEAD ^main"
+
+alias "glab issue ls"="glab issue ls -P 100"
+
+alias dco="docker compose"
 alias dc="docker container"
+alias dn="docker network"
+alias dv="docker volume"
 alias di="docker image"
-alias dl="docker logs"
-alias de="docker exec"
-alias dco="docker-compose"
 
-# KUBERNETES
-alias k="kubectl"
-alias kcc="kubectl config current-context"
-alias kg="kubectl get"
-alias kga="kubectl get all --all-namespaces"
-alias kgp="kubectl get pods"
-alias kgps="kubectl get pods -n kube-system"
-alias kgs="kubectl get services"
-alias kus="kubectl config use-context"
-
-# exa
-alias l="exa -la"
-alias cat="bat"
-
-export EDITOR=vim
+alias psqlin="$HOME/script/psqlin.sh"
+alias psqlexec="$HOME/script/psqlexec.sh"
