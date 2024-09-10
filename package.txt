@@ -2,7 +2,7 @@ zsh
 git
 tmux
 ripgrep
-exa
+eza
 bat
 python3
 fzf
