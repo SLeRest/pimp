@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Credit to dfroger
+
 # This is script is launch by the editor/IDE (neovim, vscode...)
 
 # Slugify
