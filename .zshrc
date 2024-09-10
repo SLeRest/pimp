@@ -147,3 +147,5 @@ alias di="docker image"
 
 alias psqlin="$HOME/script/psqlin.sh"
 alias psqlexec="$HOME/script/psqlexec.sh"
+
+export PROJECT="bank"
